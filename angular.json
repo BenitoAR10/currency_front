@@ -35,7 +35,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "600kb",
                   "maximumError": "1mb"
                 },
                 {
@@ -52,7 +52,27 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "test": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -96,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b6c1dd9a-3329-4571-ae8c-64f0a8e96a58"
   }
 }
